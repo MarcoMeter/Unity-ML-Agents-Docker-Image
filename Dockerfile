@@ -75,15 +75,15 @@ RUN pip install jupyter-tensorboard
 
 # Retrieve and prepare ML-Agents Python files
 USER root
-ADD https://github.com/Unity-Technologies/ml-agents/archive/0.2.1c.tar.gz /home/jovyan/
-RUN tar -xzvf /home/jovyan/0.2.1c.tar.gz -C /home/jovyan/ \
-	&& rm /home/jovyan/0.2.1c.tar.gz \
-	&& mv /home/jovyan/ml-agents-0.2.1c/python/ /home/jovyan/temp \
-	&& rm -r /home/jovyan/ml-agents-0.2.1c/ \
-	&& mv /home/jovyan/temp /home/jovyan/ml-agents-0.2.1c  \
-	&& pip install /home/jovyan/ml-agents-0.2.1c/. \
+ADD https://github.com/Unity-Technologies/ml-agents/archive/0.2.1d.tar.gz /home/jovyan/
+RUN tar -xzvf /home/jovyan/0.2.1d.tar.gz -C /home/jovyan/ \
+	&& rm /home/jovyan/0.2.1d.tar.gz \
+	&& mv /home/jovyan/ml-agents-0.2.1d/python/ /home/jovyan/temp \
+	&& rm -r /home/jovyan/ml-agents-0.2.1d/ \
+	&& mv /home/jovyan/temp /home/jovyan/ml-agents-0.2.1d  \
+	&& pip install /home/jovyan/ml-agents-0.2.1d/. \
 	&& rm -rf work \
-	&& fix-permissions /home/jovyan/ml-agents-0.2.1c
+	&& fix-permissions /home/jovyan/ml-agents-0.2.1d
 
 # Add usefull files
 COPY Troubleshooting_Utilities.ipynb /home/jovyan
